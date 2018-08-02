@@ -2,14 +2,15 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
+" on first run clone vundle how it says in its README and :PluginInstall
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'severin-lemaignan/vim-minimap'
+Plugin 'kien/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -29,6 +30,7 @@ set shiftwidth=2
 set expandtab
 set autoindent
 set smartindent
+set shell=bash
 
 "backspace key
 set backspace=2
@@ -38,8 +40,7 @@ set wildmenu
 set wildmode=longest:list,full
 
 "format the statusline
-set laststatus=2
-nmap ,e <C-E>
+set statusline="%{FugitiveStatusline()}
 
 "NERDTREE
 map <C-n> :NERDTreeToggle<CR>
