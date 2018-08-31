@@ -40,10 +40,11 @@ set wildmenu
 set wildmode=longest:list,full
 
 "format the statusline
-set statusline="%{FugitiveStatusline()}
 
 "NERDTREE
 map <C-n> :NERDTreeToggle<CR>
+map <C-j> :!python -m json.tool<CR>
+
 "file tree
 function! ToggleVExplorer()
   if exists("t:expl_buf_num")
